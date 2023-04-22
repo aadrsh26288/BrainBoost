@@ -33,12 +33,12 @@ const Sidebar = () => {
 								<p className='text-[9px] -mt-1 '>baguspangestu@live.com</p>
 							</div>
 						</div>
-						<div className='text-gray-500 text-md mt-5'>
+						<div className=' text-md mt-5 flex flex-col gap-2'>
 							<div
 								onClick={() => handleOptionClick("Home")}
 								className={
-									active === true
-										? `flex items-center p-2 rounded-lg gap-3 bg-[#407DD9] hover:text-white duration-300 cursor-pointer`
+									active === "Home"
+										? `flex items-center p-2 rounded-lg gap-3 bg-[#407DD9] hover:text-white duration-300  text-white cursor-pointer`
 										: `flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer`
 								}>
 								<AiFillHome className=' ' />
@@ -47,14 +47,20 @@ const Sidebar = () => {
 
 							<div
 								onClick={() => handleOptionClick("Courses")}
-								className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
+								className={
+									active === "Courses"
+										? `flex items-center p-2 rounded-lg gap-3 bg-[#407DD9] text-white hover:text-white duration-300 cursor-pointer`
+										: `flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer`
+								}>
 								<ImBooks className=' ' />
 								<p className='font-medium'>Course</p>
 							</div>
 
-							<div className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
+							<div
+								onClick={() => handleOptionClick("Features")}
+								className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
 								<FaUserCog className=' ' />
-								<p className=' font-medium'>Profile</p>
+								<p className=' font-medium'>Features</p>
 							</div>
 
 							<div className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
