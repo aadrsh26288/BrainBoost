@@ -3,13 +3,30 @@ import { courses } from "../data/CoursesData";
 import { HiOutlineClock } from "react-icons/hi";
 import { FaUsers } from "react-icons/fa";
 import { ImageCard } from "./Profile";
+import Modalshow from "./Modal";
+import { useDisclosure } from "@mantine/hooks";
+import { Modal, Group, Button } from "@mantine/core";
+
 const Courses = () => {
-	// const [cousesData,setCoursesData]=useState(courses)
+	const [opened, { open, close }] = useDisclosure(false);
+	const [selectedItemId, setSelectedItemId] = React.useState(null);
+
+	const handleItemClick = (itemId) => {
+		setSelectedItemId(itemId);
+		open();
+	};
+
+	const selectedItem = courses.find((course) => course.id === selectedItemId);
+
 	return (
 		<div className='grid grid-cols-4 gap-7  px-4 mt-5 mb-10 '>
+			{/* <Modalshow /> */}
+
 			{courses?.map((course) => {
 				return (
-					<div className='bg-[#F1F1F1] h-[320px] shadow-xl  rounded-[20px] overflow-hidden'>
+					<div
+						onClick={() => handleItemClick(course.id)}
+						className='bg-[#F1F1F1] h-[320px] shadow-xl  rounded-[20px] overflow-hidden'>
 						<div>
 							<img
 								className='h-[146px] object-cover w-full'
@@ -47,6 +64,21 @@ const Courses = () => {
 					</div>
 				);
 			})}
+
+			<Modal
+				className='bg-gray-500'
+				opened={opened}
+				onClose={close}
+				size={"100%"}
+				withCloseButton={false}>
+				{selectedItem && (
+					<div>
+						<h2>{selectedItem.name}</h2>
+						{/* Render other details of the selected item */}
+						<img src={selectedItem.imgUrl} />
+					</div>
+				)}
+			</Modal>
 		</div>
 	);
 };
