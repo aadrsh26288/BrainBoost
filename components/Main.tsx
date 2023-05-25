@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Courses from "./Courses";
+import Features from "./Features";
 import { CardsCarousel } from "./Features";
 interface Props {
 	active: string;
@@ -14,7 +15,7 @@ const Main = ({ active }: Props) => {
 		case "Courses":
 			return <Courses />;
 		case "Features":
-			return <CardsCarousel />;
+			return <Features />;
 		default:
 			return null;
 	}

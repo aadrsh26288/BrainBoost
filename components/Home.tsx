@@ -32,10 +32,10 @@ const Home = () => {
 					}}
 					className={
 						active === "New"
-							? "flex items-center gap-3 border-2 bg-[#F6C648] p-1 rounded-xl"
-							: "flex items-center gap-3 border-2 border-[#F6C648] p-1 rounded-xl"
+							? "flex items-center gap-3 border-2 bg-[#F6C648] p-1 rounded-xl cursor-pointer"
+							: "flex items-center gap-3 border-2 border-[#F6C648] p-1 rounded-xl cursor-pointer "
 					}>
-					<div className='p-3 rounded-full bg-yellow-500 '>
+					<div className='p-3 rounded-full bg-[#F6C648] '>
 						<BiBookAlt className='text-white text-lg  ' />
 					</div>
 					<p className='text-[14px]'>New</p>
@@ -47,8 +47,8 @@ const Home = () => {
 					}}
 					className={
 						active === "Free"
-							? "flex items-center gap-3 border-2 bg-[#15BE4F] p-1 rounded-xl"
-							: "flex items-center gap-3 border-2 border-[#15BE4F] p-1 rounded-xl"
+							? "flex items-center gap-3 text-white bg-[#15BE4F] p-1 rounded-xl cursor-pointer"
+							: "flex items-center gap-3 border-2 border-[#15BE4F] p-1 rounded-xl cursor-pointer"
 					}>
 					<div className='p-3 rounded-full bg-[#15BE4F] '>
 						<BiBookAlt className='text-white text-lg  ' />
@@ -62,11 +62,11 @@ const Home = () => {
 					}}
 					className={
 						active === "Popular"
-							? "flex items-center gap-3 border-2 bg-[#007DD8] p-1 rounded-xl"
-							: "flex items-center gap-3 border-2 border-[#007DD8] p-1 rounded-xl"
+							? "flex items-center gap-3 border-2 bg-[#007DD8] p-1 rounded-xl cursor-pointer"
+							: "flex items-center gap-3 border-2 border-[#007DD8] p-1 rounded-xl cursor-pointer"
 					}>
-					<div className='p-3 rounded-full bg-[#007DD8] '>
-						<BiBookAlt className='text-white text-lg  ' />
+					<div className='p-3 rounded-full bg-[#007DD8] cursor-pointer '>
+						<BiBookAlt className='text-white text-lg cursor-pointer ' />
 					</div>
 					<p className='text-[14px]'>Popular</p>
 				</div>
@@ -77,8 +77,8 @@ const Home = () => {
 					}}
 					className={
 						active === "Paid"
-							? "flex items-center gap-3 border-2 bg-[#C565C7] p-1 rounded-xl"
-							: "flex items-center gap-3 border-2 border-[#C565C7] p-1 rounded-xl"
+							? "flex items-center gap-3 border-2 bg-[#C565C7] p-1 rounded-xl cursor-pointer"
+							: "flex items-center gap-3 border-2 border-[#C565C7] p-1 rounded-xl cursor-pointer"
 					}>
 					<div className='p-3 rounded-full bg-[#C565C7] '>
 						<BiBookAlt className='text-white text-lg  ' />
@@ -92,10 +92,10 @@ const Home = () => {
 					}}
 					className={
 						active === "Upcoming"
-							? "flex items-center gap-3 border-2 bg-[#EC7D2D] p-1 rounded-xl"
-							: "flex items-center gap-3 border-2 border-[#EC7D2D] p-1 rounded-xl"
+							? "flex items-center gap-3 border-2 bg-[#EC7D2D] p-1 rounded-xl cursor-pointer"
+							: "flex items-center gap-3 border-2 border-[#EC7D2D] p-1 rounded-xl cursor-pointer"
 					}>
-					<div className='p-3 rounded-full bg-[#EC7D2D] '>
+					<div className='p-3 rounded-full bg-[#EC7D2D]  '>
 						<BiBookAlt className='text-white text-lg  ' />
 					</div>
 					<p className='text-[14px]'>Upcoming</p>

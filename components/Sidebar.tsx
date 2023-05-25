@@ -18,9 +18,9 @@ const Sidebar = () => {
 
 	return (
 		<>
-			<div className='flex w-full'>
+			<div className='flex w-full h-full'>
 				{open === true ? (
-					<div className='bg-[#DDDDDD] border-2 w-[245px]  p-2 flex flex-col h-[540px] '>
+					<div className='bg-[#DDDDDD] border-2 w-[245px]  p-2 flex flex-col '>
 						<div className='gap-3 flex items-center px-2 py-1 bg-[#407DD9]'>
 							<img
 								className='rounded-full w-[35px] h-[35px]'
@@ -58,7 +58,11 @@ const Sidebar = () => {
 
 							<div
 								onClick={() => handleOptionClick("Features")}
-								className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
+								className={
+									active === "Features"
+										? `flex items-center p-2 rounded-lg gap-3 bg-[#407DD9] text-white hover:text-white duration-300 cursor-pointer`
+										: `flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer`
+								}>
 								<FaUserCog className=' ' />
 								<p className=' font-medium'>Features</p>
 							</div>
