@@ -1,18 +1,35 @@
-import React from 'react'
-import  Sidebar  from '@/components/Sidebar'
-import Home from '@/components/Home'
-import Courses from '@/components/Courses'
-import Main from '@/components/Sidebar'
+import React, { useEffect, useState } from "react";
+import Sidebar from "@/components/Sidebar";
+import { useRouter } from "next/router";
+import { auth } from "@/firebase/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
-const index = () => {
+const Index = () => {
+	const router = useRouter();
+	const [isLoggedIn, setIsLoggedIn] = useState(false); // Local state to track login status
 
-  return (
-    <div className="h-full">
-      <Sidebar/>
-  
-        
-    </div>
-  )
-}
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
+			if (user) {
+				setIsLoggedIn(true);
+			} else {
+				// No user is signed in
+				setIsLoggedIn(false); // Update the login status
+				router.push("/register/login");
+			}
+		});
 
-export default index
+		return () => {
+			unsubscribe();
+		};
+	}, []);
+
+	return (
+		<div>
+			{isLoggedIn && <Sidebar />}{" "}
+			{/* Render the Sidebar component only if isLoggedIn is true */}
+		</div>
+	);
+};
+
+export default Index;

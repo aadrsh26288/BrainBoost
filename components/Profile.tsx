@@ -93,6 +93,7 @@ export function ImageCard() {
 						// href={link}
 						target='_blank'>
 						<div
+						
 							className={classes.image}
 							style={{ backgroundImage: `url(${c.imgUrl}})` }}
 						/>

@@ -3,17 +3,26 @@ import { Paper, Avatar } from "@mantine/core";
 import { AiFillHome } from "react-icons/ai";
 import { ImBooks } from "react-icons/im";
 import { FaUserCog } from "react-icons/fa";
+import { auth } from "@/firebase/firebase";
+import { signOut } from "firebase/auth";
+import { useRouter } from "next/router";
 import Main from "./Main";
 import Navbar from "./Navbar";
 interface NavbarProps {
 	open: boolean;
 }
 const Sidebar = () => {
+	const router = useRouter();
 	const [active, setActive] = useState("Home");
 	const [open, setOpen] = useState(true);
 
 	const handleOptionClick = (option: string) => {
 		setActive(option);
+	};
+
+	const logout = (auth: any) => {
+		signOut(auth);
+		router.push("/register/login");
 	};
 
 	return (
@@ -29,8 +38,10 @@ const Sidebar = () => {
 								}
 							/>
 							<div>
-								<p className='text-[16px] font-semibold'>Bagus Pangestu</p>
-								<p className='text-[9px] -mt-1 '>baguspangestu@live.com</p>
+								<p className='text-[16px] font-semibold'>
+									{auth.currentUser?.displayName}
+								</p>
+								<p className='text-[9px] -mt-1 '>{auth.currentUser?.email}</p>
 							</div>
 						</div>
 						<div className=' text-md mt-5 flex flex-col gap-2'>
@@ -74,7 +85,13 @@ const Sidebar = () => {
 
 							<div className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
 								<AiFillHome className=' ' />
-								<p className='font-medium'>Logout</p>
+								<p
+									className='font-medium'
+									onClick={() => {
+										logout(auth);
+									}}>
+									Logout
+								</p>
 							</div>
 						</div>
 					</div>

@@ -36,7 +36,7 @@ const Features = () => {
 
 			<div className='p-3 flex items-start gap-3 '>
 				<div className=' bg-transparent py-12 px-[24px]'>
-					<p className='font-semibold text-xl'>Self learing support</p>
+					<p className='font-semibold text-xl'>Self learning support</p>
 					<p className='mt-3'>
 						Pulvinar nisl ipsum morbi diam scelerisque lorem ipsum dolor sit
 						amet, consectetur adipiscing elit. Pulvinar nisl ipsum morbi diam
