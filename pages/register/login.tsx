@@ -22,7 +22,8 @@ const Login = () => {
 	const login = async () => {
 		try {
 			await signInWithEmailAndPassword(auth, email, password);
-			alert("login sucessfull");
+			// alert("login sucessfull");
+			router.push("/");
 		} catch (err) {
 			console.log(err);
 		}

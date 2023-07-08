@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./Home";
 import Courses from "./Courses";
 import Features from "./Features";
-import { CardsCarousel } from "./Features";
+// import { CardsCarousel } from "./Features";
 interface Props {
 	active: string;
 }

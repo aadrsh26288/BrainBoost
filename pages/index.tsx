@@ -13,8 +13,7 @@ const Index = () => {
 			if (user) {
 				setIsLoggedIn(true);
 			} else {
-				// No user is signed in
-				setIsLoggedIn(false); // Update the login status
+				setIsLoggedIn(false);
 				router.push("/register/login");
 			}
 		});
