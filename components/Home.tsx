@@ -38,7 +38,7 @@ const Home = () => {
 					<div className='p-3 rounded-full bg-[#F6C648] '>
 						<BiBookAlt className='text-white text-lg  ' />
 					</div>
-					<p className='text-[14px]'>New</p>
+					<p className='text-[14px] hidden sm:inline'>New</p>
 				</div>
 
 				<div
@@ -53,7 +53,7 @@ const Home = () => {
 					<div className='p-3 rounded-full bg-[#15BE4F] '>
 						<BiBookAlt className='text-white text-lg  ' />
 					</div>
-					<p className='text-[14px]'>Free</p>
+					<p className='text-[14px] hidden sm:inline'>Free</p>
 				</div>
 
 				<div
@@ -68,7 +68,7 @@ const Home = () => {
 					<div className='p-3 rounded-full bg-[#007DD8] cursor-pointer '>
 						<BiBookAlt className='text-white text-lg cursor-pointer ' />
 					</div>
-					<p className='text-[14px]'>Popular</p>
+					<p className='text-[14px] hidden sm:inline'>Popular</p>
 				</div>
 
 				<div
@@ -83,7 +83,7 @@ const Home = () => {
 					<div className='p-3 rounded-full bg-[#C565C7] '>
 						<BiBookAlt className='text-white text-lg  ' />
 					</div>
-					<p className='text-[14px]'>Paid</p>
+					<p className='text-[14px] hidden sm:inline'>Paid</p>
 				</div>
 
 				<div
@@ -98,12 +98,12 @@ const Home = () => {
 					<div className='p-3 rounded-full bg-[#EC7D2D]  '>
 						<BiBookAlt className='text-white text-lg  ' />
 					</div>
-					<p className='text-[14px]'>Upcoming</p>
+					<p className='text-[14px] hidden sm:inline'>Upcoming</p>
 				</div>
 			</div>
 
 			{/* coures */}
-			<div className='grid grid-cols-4 gap-7 mt-5 mb-10 '>
+			<div className='grid md:grid-cols-4 gap-7 mt-5 mb-10 '>
 				{filteredCourse?.map((course) => {
 					return (
 						<div className='bg-[#F1F1F1] h-[320px] shadow-xl  rounded-[20px] overflow-hidden'>

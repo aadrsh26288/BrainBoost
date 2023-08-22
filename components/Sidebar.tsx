@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Paper, Avatar } from "@mantine/core";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiFillSetting } from "react-icons/ai";
+import { IoMdLogOut } from "react-icons/io";
 import { ImBooks } from "react-icons/im";
 import { FaUserCog } from "react-icons/fa";
+import { MdFeaturedPlayList } from "react-icons/md";
+
 import { auth } from "@/firebase/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/router";
 import Main from "./Main";
 import Navbar from "./Navbar";
+
 interface NavbarProps {
 	open: boolean;
 }
@@ -34,14 +38,17 @@ const Sidebar = () => {
 							<img
 								className='rounded-full w-[35px] h-[35px]'
 								src={
-									"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+									// "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+									auth.currentUser?.photoURL
 								}
 							/>
 							<div>
-								<p className='text-[16px] font-semibold'>
+								<p className='text-[16px] font-semibold  text-gray-100'>
 									{auth.currentUser?.displayName}
 								</p>
-								<p className='text-[9px] -mt-1 '>{auth.currentUser?.email}</p>
+								<p className='text-[9px] -mt-1 text-gray-100 '>
+									{auth.currentUser?.email}
+								</p>
 							</div>
 						</div>
 						<div className=' text-md mt-5 flex flex-col gap-2'>
@@ -74,17 +81,17 @@ const Sidebar = () => {
 										? `flex items-center p-2 rounded-lg gap-3 bg-[#407DD9] text-white hover:text-white duration-300 cursor-pointer`
 										: `flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer`
 								}>
-								<FaUserCog className=' ' />
+								<MdFeaturedPlayList className=' ' />
 								<p className=' font-medium'>Features</p>
 							</div>
 
 							<div className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
-								<AiFillHome className=' ' />
+								<AiFillSetting className=' ' />
 								<p className=' font-medium'>Settings</p>
 							</div>
 
 							<div className='flex items-center p-2 rounded-lg gap-3 hover:bg-[#407DD9] hover:text-white duration-300 cursor-pointer'>
-								<AiFillHome className=' ' />
+								<IoMdLogOut className=' ' />
 								<p
 									className='font-medium'
 									onClick={() => {

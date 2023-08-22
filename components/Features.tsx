@@ -3,12 +3,24 @@ import concept from "../Images/image1.png";
 import c2 from "../Images/image2.png";
 import c3 from "../Images/image4.png";
 import Image from "next/image";
+import YouTube from "react-youtube";
 
 const Features = () => {
 	console.log("Features", concept);
+	const opts = {
+		height: "470",
+		width: "100%",
+		playerVars: {
+			autoplay: 1,
+		},
+	};
+
 	return (
 		<div className=''>
 			<h2 className='text-2xl text-center font-bold'>Features</h2>
+			<div className='px-10 py-4'>
+				<YouTube videoId='3Pq9blTtKfE' opts={opts} />
+			</div>
 			<div className='p-3 flex items-start gap-3 '>
 				{" "}
 				<div className=' bg-transparent py-12 px-[24px]'>

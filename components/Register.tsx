@@ -84,16 +84,7 @@ const Register = () => {
 						value={mobile}
 						onChange={(e) => setMobile(e.target.value)}
 					/>
-					<input
-						type='file'
-						placeholder='Upload profile photo'
-						name='image'
-						accept='image/*'
-						id='file_input'
-						onChange={(e) => {
-							handleImageChange(e);
-						}}
-					/>
+
 					<TextInput
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
@@ -105,6 +96,16 @@ const Register = () => {
 						onChange={(e) => setPassword(e.target.value)}
 						type='password'
 						placeholder='Password'
+					/>
+					<input
+						type='file'
+						placeholder='Upload profile photo'
+						name='image'
+						accept='image/*'
+						id='file_input'
+						onChange={(e) => {
+							handleImageChange(e);
+						}}
 					/>
 					<Button
 						className='bg-blue-800 mt-2'
